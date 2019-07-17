@@ -1,0 +1,17 @@
+{
+  "name": "python-django",
+  "version": 2,
+  "public": true,
+  "builds": [
+    {
+      "src": "manage.py",
+      "use": "@now/python"
+    },
+    { "src": "static/**", "use": "@now/static" },
+    { "src": "media/**", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/css/(.*)", "dest": "css/$1" },
+    { "src": "/(.*)", "dest": "app.py" }
+  ]
+}
